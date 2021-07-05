@@ -1,0 +1,401 @@
+// variables
+
+$mainColor: #063970;
+
+* {
+  font-family: "Marvel", sans-serif;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.sidebar {
+  background-color: #063970;
+  display: flex;
+  flex-direction: column;
+  width: 7.625rem;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  &-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 5px solid #fff;
+
+    span {
+      display: inline-block;
+      padding: 1rem;
+    }
+
+    h2 {
+      display: none;
+    }
+  }
+
+  &-menu {
+    margin-top: 1rem;
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .list-item {
+      margin-right: 2.5rem;
+      width: 7rem;
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      a {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        transition: 0.5s;
+
+        &:hover,
+        &:focus {
+          box-shadow: inset 0 -6.25em 0 0 #fff;
+          border-radius: 20px;
+        }
+        .title {
+          display: none;
+        }
+
+        .icon {
+          width: 50px;
+        }
+      }
+    }
+  }
+}
+
+.sidebar-active {
+  background-color: #063970;
+  display: flex;
+  flex-direction: column;
+  width: 24.0625rem;
+  height: 100vh;
+  position: fixed;
+  transition: width 300ms;
+  left: 0;
+  top: 0;
+
+  .sidebar-brand {
+    display: flex;
+    width: 100%;
+    align-items: center;
+
+    span {
+      display: inline-block;
+      width: 8rem;
+    }
+    h2 {
+      display: block;
+      font-size: 3rem;
+      color: #fff;
+      font-weight: 700;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+  }
+
+  .sidebar-menu {
+    margin-top: 3rem;
+
+    #iron,
+    #glowe,
+    #panter,
+    #hammer,
+    #deadpool {
+      display: none;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .list-item {
+      width: 100%;
+      margin-left: 3rem;
+      margin-top: 1rem;
+    }
+
+    .list-item:hover {
+      padding-left: 1rem;
+      transition: all ease 1s;
+    }
+
+    a {
+      display: flex;
+      color: #fff;
+      font-size: 2.75rem;
+      padding-left: 3rem;
+      justify-content: space-between;
+      align-items: center;
+
+      &:hover {
+        background: #fff;
+        color: $mainColor;
+        border-radius: 35px 0rem 0rem 35px;
+        transition: all 0.5s ease;
+      }
+
+      &:focus {
+        background: #fff;
+        color: $mainColor;
+        border-radius: 35px 0rem 0rem 35px;
+        transition: all 0.5s ease;
+      }
+
+      .title {
+        display: block;
+      }
+    }
+
+    .characters {
+      &:hover > #iron {
+        display: inline-block;
+        width: 50px;
+        margin-right: 1rem;
+        margin-top: 10px;
+      }
+
+      &:focus > #iron {
+        display: inline-block;
+        width: 50px;
+        margin-right: 1rem;
+        margin-top: 10px;
+      }
+    }
+
+    .comics {
+      &:hover > #glowe {
+        display: inline-block;
+        width: 50px;
+        margin-right: 3rem;
+        margin-top: 10px;
+      }
+
+      &:focus > #glowe {
+        display: inline-block;
+        width: 50px;
+        margin-right: 1rem;
+        margin-top: 10px;
+      }
+    }
+
+    .creators {
+      &:hover > #panter {
+        display: inline-block;
+        width: 50px;
+        margin-right: 3rem;
+        margin-top: 10px;
+      }
+
+      &:focus > #panter {
+        display: inline-block;
+        width: 50px;
+        margin-right: 1rem;
+        margin-top: 10px;
+      }
+    }
+
+    .events {
+      &:hover > #hammer {
+        display: inline-block;
+        width: 50px;
+        margin-right: 3rem;
+        margin-top: 10px;
+      }
+
+      &:focus > #hammer {
+        display: inline-block;
+        width: 50px;
+        margin-right: 1rem;
+        margin-top: 10px;
+      }
+    }
+
+    .stories {
+      &:hover > #deadpool {
+        display: inline-block;
+        width: 50px;
+        margin-right: 4rem;
+        margin-top: 10px;
+      }
+
+      &:focus > #deadpool {
+        display: inline-block;
+        width: 50px;
+        margin-right: 1rem;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+#iron,
+#glowe,
+#panter,
+#hammer,
+#deadpool {
+  display: block;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+  position: fixed;
+  left: 24.0625rem;
+  width: calc(100% - 24.0625rem);
+  transition: left 300ms;
+  height: 8.5rem;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  box-shadow: 5px 5px 17px rgba($color: #000000, $alpha: 0.5);
+}
+
+.header-active {
+  width: calc(100% - 7.625rem);
+  position: fixed;
+  left: 7.625rem;
+}
+
+.menu-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+
+  &_burger {
+    width: 50px;
+    height: 6px;
+    background-color: #000;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba($color: #000000, $alpha: 1);
+    transition: all 0.5s ease-in-out;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 6px;
+      background: #000;
+      border-radius: 5px;
+      box-shadow: 0 3px 6px rgba($color: #000000, $alpha: 1);
+      transition: all 0.5s ease-in-out;
+    }
+
+    &::before {
+      transform: translateY(-16px);
+    }
+    &::after {
+      transform: translateY(16px);
+    }
+  }
+}
+
+// ANIMATION
+.menu-btn.open .menu-btn_burger {
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+
+  &::before {
+    transform: rotate(45deg) translate(35px, -35px);
+  }
+
+  &::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+  }
+}
+
+.search {
+  border: 3px solid #ccc;
+  border-radius: 1.875rem;
+  height: 3.75rem;
+  display: flex;
+  align-items: center;
+  width: 16.375rem;
+
+  input {
+    height: 100%;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    width: 70%;
+  }
+
+  span {
+    display: inline-flex;
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: ccc;
+  }
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  span {
+    width: 50px;
+    border-radius: 50%;
+    padding: 5px;
+    margin-right: 1rem;
+  }
+
+  small {
+    display: inline-block;
+    color: #ccc;
+    text-align: center;
+  }
+}
+
+.content {
+  padding: 2rem;
+  background-color: #f0f0f0;
+  margin-left: 24.0625rem;
+  margin-top: 8.5rem;
+  min-height: calc(100vh - 8.5rem);
+  width: calc(100% - 24.0625rem);
+  display: block;
+  transition: margin-left 300ms;
+
+  &-active {
+    width: calc(100% - 7.625rem);
+    margin-left: 7.625rem;
+  }
+}
+
+.epa {
+  width: 100%;
+  background-color: blue;
+  margin: 0 auto;
+}
+
+.card {
+  // border: 5px solid blue;
+  border-radius: 15px;
+}
+
+.characterImage {
+  max-width: 25rem;
+}
