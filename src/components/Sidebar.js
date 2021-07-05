@@ -69,13 +69,6 @@ const SideBar = ({ menuOpen }) => {
                         </Link>
                     </li>
 
-                    <li className="list-item">
-                        <Link to="/SingleCharacters" className="stories">
-                            <span className="title">Stories</span>
-                            <span className="icon" id="deadpool"><Deadpool></Deadpool></span>
-                        </Link>
-                    </li>
-
                 </ul>
             </div>
         </section >

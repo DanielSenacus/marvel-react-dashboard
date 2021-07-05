@@ -334,6 +334,7 @@ $mainColor: #063970;
   display: flex;
   align-items: center;
   width: 16.375rem;
+  padding: 1rem;
 
   input {
     height: 100%;
@@ -344,11 +345,21 @@ $mainColor: #063970;
     width: 70%;
   }
 
-  span {
-    display: inline-flex;
-    padding: 1rem;
-    font-size: 1.5rem;
-    color: ccc;
+  &_button {
+    border-radius: 25px;
+    background: transparent;
+    border: none;
+
+    span {
+      display: inline-flex;
+      padding: 1rem;
+      font-size: 1.5rem;
+      color: #ccc;
+
+      &:hover {
+        color: rgb(0, 56, 240);
+      }
+    }
   }
 }
 
@@ -397,5 +408,9 @@ $mainColor: #063970;
 }
 
 .characterImage {
+  max-width: 25rem;
+}
+
+.characterContainer {
   max-width: 25rem;
 }

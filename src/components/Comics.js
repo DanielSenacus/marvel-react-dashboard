@@ -30,9 +30,10 @@ const Comics = ({ menuOpen, loading, comics }) => {
 
                         return (
                             <div className="card flex-md-row p-3 mb-4 box-shadow h-md-250">
-                                <a href="">
-                                    <img className="card-img-top" src={thumbnail.path + "." + thumbnail.extension} alt={title} />
-                                </a>
+
+                                <div className="characterContainer">
+                                    <img className="card-img-top img-thumbnail" src={thumbnail.path + "." + thumbnail.extension} alt={title} />
+                                </div>
                                 <div className="card-body">
                                     <h4 className="card-title">
                                         {title}

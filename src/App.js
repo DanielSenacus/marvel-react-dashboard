@@ -173,19 +173,12 @@ const App = () => {
 
         <form id="connectionForm" onSubmit={onSearch}>
           <div className="search">
-            <span><FaSearch /></span>
             <input onChange={(e) => setQueryName(e.target.value)} id="name" type="search" placeholder="Search..." />
+            <button type="submit" id="submit" className="search_button">
+              <span><FaSearch /></span>
+            </button>
           </div>
-          <button type="submit" id="submit" className="search_button">
-            <Router>
-              <Switch>
-                <Link to="/SingleCharacters">
-                  Serach
-                </Link>
-              </Switch>
 
-            </Router>
-          </button>
 
         </form>
         <section id="characterSection"></section>
@@ -200,9 +193,6 @@ const App = () => {
         <Switch>
           <Route exact path="/">
             <Main menuOpen={menuOpen} loading={loading}></Main>
-          </Route>
-          <Route path="/SingleCharacters">
-            <SingleCharacter menuOpen={menuOpen} data={data} loading={loading}></SingleCharacter>
           </Route>
           <Route path="/Characters">
             <Characters menuOpen={menuOpen} characters={characters} loading={loading} ></Characters>
