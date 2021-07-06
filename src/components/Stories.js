@@ -12,10 +12,12 @@ const Stories = ({ menuOpen, stories, loading }) => {
         );
 
     } else if (stories === 1) {
-        <section className={menuOpen ? 'content content-active' : 'content'}>
-            {loading && <h1>Cargando...</h1>}
-            <h1>this character dont have events </h1>
-        </section>
+        return (
+            <section className={menuOpen ? 'content content-active' : 'content'}>
+                {loading && <h1>Cargando...</h1>}
+                <h1>This character does not have stories </h1>
+            </section>
+        );
 
     } else if (stories) {
 

@@ -14,10 +14,13 @@ const Comics = ({ menuOpen, loading, comics }) => {
             </section>
         );
     } else if (comics === 1) {
-        <section className={menuOpen ? 'content content-active' : 'content'}>
-            {loading && <h1>Cargando...</h1>}
-            <h1>this character dont have comics </h1>
-        </section>
+
+        return (
+            <section className={menuOpen ? 'content content-active' : 'content'}>
+                {loading && <h1>Cargando...</h1>}
+                <h1>This character does not have comics </h1>
+            </section>
+        );
     } else if (comics) {
         return (
             <section className={menuOpen ? 'content content-active' : 'content'}>
@@ -64,7 +67,7 @@ const Comics = ({ menuOpen, loading, comics }) => {
     } else {
         return (
             <section className={menuOpen ? 'content content-active' : 'content'}>
-                <h1>salchi</h1>
+                {loading && <h1>Cargando...</h1>}
             </section>
         );
     }

@@ -49,7 +49,7 @@ const Characters = ({ menuOpen, characters, loading }) => {
                         const { comics, description, events, id, name, thumbnail, series, stories, } = character;
 
                         return (
-                            <div className="">
+                            <div key={id} className="">
                                 <h1>{name}</h1>;
                                 <div className="card flex-md-row mb-4 box-shadow h-md-250" id="characterCard">
                                     <div className="card characterImage">

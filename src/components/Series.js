@@ -12,10 +12,12 @@ const Series = ({ menuOpen, series, loading }) => {
         );
 
     } else if (series === 1) {
-        <section className={menuOpen ? 'content content-active' : 'content'}>
-            {loading && <h1>Cargando...</h1>}
-            <h1>this character dont have series </h1>
-        </section>
+        return (
+            <section className={menuOpen ? 'content content-active' : 'content'}>
+                {loading && <h1>Cargando...</h1>}
+                <h1>This character does not have series </h1>
+            </section>
+        );
 
     } else if (series) {
 

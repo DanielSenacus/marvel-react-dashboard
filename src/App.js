@@ -30,7 +30,7 @@ const App = () => {
   // data Hooks
   const [data, setData] = React.useState([]);
   const [characters, setCharacters] = React.useState(undefined);
-  const [comics, setComics] = React.useState(null);
+  const [comics, setComics] = React.useState(undefined);
   const [events, setEvents] = React.useState(undefined);
   const [stories, setStories] = React.useState(undefined);
   const [series, setSeries] = React.useState(undefined);
@@ -85,6 +85,11 @@ const App = () => {
           if (result["data"].count === 0) {
             setCharacters(0)
             setLoading(false);
+            setComics(1);
+            setEvents(1);
+            setSeries(1);
+            setStories(1);
+
 
           } else {
             const paketico = result["data"].results;
@@ -133,16 +138,19 @@ const App = () => {
     request.onload = function () {
 
       if (this.status == 200) {
-        const results = JSON.parse(this.responseText),
-          items = results["data"].results;
-        if (results["data"] === 0) {
+        const results = JSON.parse(this.responseText);
+        console.log(results);
+
+        if (results["code"] === 409) {
+          console.log("eeee");
           setLoading(false)
           setFuncion(1)
 
-        } else
+        } else {
+          const items = results["data"].results;
           setLoading(false)
-        setFuncion(items);
-
+          setFuncion(items);
+        }
 
       } else {
         console.log("no gordis")
