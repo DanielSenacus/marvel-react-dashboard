@@ -14,6 +14,7 @@ import Stories from './components/Stories';
 import Wrong from './components/Wrong';
 import Intro from './components/Intro';
 
+
 // Icons
 
 import { FaSearch } from 'react-icons/fa'
@@ -42,7 +43,7 @@ const App = () => {
 
     const pepa = new XMLHttpRequest();
     const params = "characters";
-    pepa.open("GET", "http://localhost:8080/riki/main.php?public=" + params, true);
+    pepa.open("GET", "../backend/main.php?public=" + params, true);
 
     pepa.onload = function () {
 
@@ -83,7 +84,7 @@ const App = () => {
     if (queryName) {
       const name = queryName;
       const params = "name=" + name;
-      request.open("GET", "http://localhost:8080/riki/text.php?" + params, true);
+      request.open("GET", "../backend/text.php?" + params, true);
 
       request.onerror = function () {
         setLoading(false);
@@ -141,7 +142,7 @@ const App = () => {
   const getCharacterAtrributes = (CharacterId, category, setFuncion) => {
     setLoading(true)
     const request = new XMLHttpRequest();
-    request.open("GET", 'http://localhost:8080/riki/comics.php?character-id=' + CharacterId + "&" + "reference=" + category, true);
+    request.open("GET", '../backend/comics.php?character-id=' + CharacterId + "&" + "reference=" + category, true);
 
     request.onerror = function () {
       setLoading(false);
