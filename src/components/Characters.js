@@ -46,14 +46,14 @@ const Characters = ({ menuOpen, characters, loading }) => {
                     characterAtributtes.map((character) => {
 
 
-                        const { comics, description, events, id, name, thumbnail, series, stories, } = character;
+                        const { comics, description, events, id, name, thumbnail, series } = character;
 
                         return (
                             <div key={id} className="">
                                 <h1>{name}</h1>;
                                 <div className="card flex-md-row mb-4 box-shadow h-md-250" id="characterCard">
                                     <div className="card characterImage">
-                                        <img className="card-img-right img-thumbnail" src={thumbnail.path + "." + thumbnail.extension} />
+                                        <img alt={name} className="card-img-right img-thumbnail" src={thumbnail.path + "." + thumbnail.extension} />
                                     </div>
                                     <div className="card-body d-flex flex-column align-items-start">
                                         <h3>{name}</h3>

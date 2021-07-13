@@ -3,7 +3,7 @@ import React from 'react';
 // Components
 
 import SideBar from './components/Sidebar';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Characters from './components/Characters';
 import Main from './components/Main';
@@ -11,8 +11,8 @@ import Comics from './components/Comics';
 import Series from './components/Series';
 import Events from './components/Events';
 import Stories from './components/Stories';
-import SingleCharacter from './components/SingleCharacter';
 import Wrong from './components/Wrong';
+import Intro from './components/Intro';
 
 // Icons
 
@@ -26,9 +26,9 @@ const App = () => {
   const [menuOpen, setMenuOpen] = React.useState(true);
   const [queryName, setQueryName] = React.useState("");
   const [loading, setLoading] = React.useState(false);
+  const [intro, setIntro] = React.useState(true);
 
   // data Hooks
-  const [data, setData] = React.useState([]);
   const [characters, setCharacters] = React.useState(undefined);
   const [comics, setComics] = React.useState(undefined);
   const [events, setEvents] = React.useState(undefined);
@@ -45,9 +45,22 @@ const App = () => {
     pepa.open("GET", "http://localhost:8080/riki/main.php?public=" + params, true);
 
     pepa.onload = function () {
-      const result = JSON.parse(pepa.responseText);
-      const final = result["data"].results;
-      setCharacters(final);
+
+      if (pepa.status === 200) {
+        const result = JSON.parse(pepa.responseText);
+
+        if (result["data"].count === 0) {
+          console.log("papi que pasas");
+        } else {
+          const final = result["data"].results;
+          setCharacters(final);
+
+        }
+
+
+      }
+
+
     }
     pepa.send();
 
@@ -93,7 +106,6 @@ const App = () => {
 
           } else {
             const paketico = result["data"].results;
-            setData(result);
             setCharacters(paketico);
 
             console.log(paketico)
@@ -118,7 +130,7 @@ const App = () => {
       }
       request.send();
     } else {
-      alert("putp");
+      alert("please enter a character");
       setLoading(false);
       return
     }
@@ -137,9 +149,9 @@ const App = () => {
     }
     request.onload = function () {
 
-      if (this.status == 200) {
+      if (this.status === 200) {
         const results = JSON.parse(this.responseText);
-        console.log(results);
+        // console.log(results);
 
         if (results["code"] === 409) {
           console.log("eeee");
@@ -166,12 +178,17 @@ const App = () => {
 
   React.useEffect(() => {
     fetchApi();
+    setTimeout(() => {
+      setIntro(false);
+    }, 15000);
+
   }, [])
 
 
 
   return (
     <>
+      {intro && <Intro></Intro>}
       <header className={menuOpen ? 'header header-active' : 'header'}>
 
         <div onClick={() => setMenuOpen(!menuOpen)} className={menuOpen ? "menu-btn open" : "menu-btn"}>

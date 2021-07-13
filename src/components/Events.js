@@ -31,7 +31,7 @@ const Events = ({ menuOpen, events, loading }) => {
                         const { id, thumbnail, title, description, characters, creators } = item
 
                         return (
-                            <div className="card flex-md-row p-3 mb-4 box-shadow h-md-250">
+                            <div key={id} className="card flex-md-row p-3 mb-4 box-shadow h-md-250">
 
                                 <div className="card characterContainer">
 
@@ -68,7 +68,7 @@ const Events = ({ menuOpen, events, loading }) => {
     } else {
         return (
             <section className={menuOpen ? 'content content-active' : 'content'}>
-                <h1>salchi</h1>
+                {loading && <h1>Cargando...</h1>}
             </section>
         );
     }

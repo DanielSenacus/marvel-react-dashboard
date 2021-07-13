@@ -31,10 +31,10 @@ const Series = ({ menuOpen, series, loading }) => {
                         const { id, thumbnail, title, description, characters, creators } = item
 
                         return (
-                            <div className="card flex-md-row p-3 mb-4 box-shadow h-md-250">
-                                <a href="">
-                                    <img className="card-img-top" src={thumbnail.path + "." + thumbnail.extension} alt={title} />
-                                </a>
+                            <div key={id} className="card flex-md-row p-3 mb-4 box-shadow h-md-250">
+
+                                <img className="card-img-top" src={thumbnail.path + "." + thumbnail.extension} alt={title} />
+
                                 <div className="card-body">
                                     <h4 className="card-title">
                                         {title}
@@ -53,9 +53,7 @@ const Series = ({ menuOpen, series, loading }) => {
                                         })}
                                     </p>
                                 </div>
-                                {/* <div className="card-footer">
-                                    <small>{comics["attributionText"]}</small>
-                                </div> */}
+
                             </div>
                         );
                     })}
@@ -65,7 +63,7 @@ const Series = ({ menuOpen, series, loading }) => {
     } else {
         return (
             <section className={menuOpen ? 'content content-active' : 'content'}>
-                <h1>salchi</h1>
+                {loading && <h1>Cargando...</h1>}
             </section>
         );
     }

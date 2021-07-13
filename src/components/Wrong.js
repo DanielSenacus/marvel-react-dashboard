@@ -1,10 +1,7 @@
 import React from 'react'
-import { BrowserRouter as useLocation } from "react-router-dom";
+
 
 const Wrong = () => {
-
-
-    // let location = useLocation();
 
     return (
         <main className='content content-active' >

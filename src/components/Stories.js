@@ -28,10 +28,10 @@ const Stories = ({ menuOpen, stories, loading }) => {
                 <div className="card-columns">
                     {stories.map((item) => {
 
-                        const { id, thumbnail, title, description, characters, creators } = item
+                        const { id, title, description, characters, creators } = item
 
                         return (
-                            <div className="card flex-md-row p-3 mb-4 box-shadow h-md-250">
+                            <div key={id} className="card flex-md-row p-3 mb-4 box-shadow h-md-250">
                                 <div className="card-body">
                                     <h4 className="card-title">
                                         {title}
@@ -50,9 +50,7 @@ const Stories = ({ menuOpen, stories, loading }) => {
                                         })}
                                     </p>
                                 </div>
-                                {/* <div className="card-footer">
-                                    <small>{comics["attributionText"]}</small>
-                                </div> */}
+
                             </div>
                         );
                     })}
@@ -62,7 +60,7 @@ const Stories = ({ menuOpen, stories, loading }) => {
     } else {
         return (
             <section className={menuOpen ? 'content content-active' : 'content'}>
-                <h1>salchi</h1>
+                {loading && <h1>Cargando...</h1>}
             </section>
         );
     }

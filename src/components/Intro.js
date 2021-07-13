@@ -31,31 +31,31 @@ const Intro = () => {
 
     return (
         <div id="intro">
-            <div id="marvel">MARVEL API</div>
+            <div id="marvel">MARVEL</div>
             <div id="bg"></div>
 
 
             <div id="hidden">
-                <img src="https://himalayasingh.github.io/marvel/img/img-1.jpg"></img>
-                <img src="https://himalayasingh.github.io/marvel/img/img-2.jpg"></img>
-                <img src="https://himalayasingh.github.io/marvel/img/img-3.jpg"></img>
-                <img src="https://himalayasingh.github.io/marvel/img/img-4.jpg"></img>
-                <img src="https://himalayasingh.github.io/marvel/img/img-5.jpg"></img>
-                <img src="https://himalayasingh.github.io/marvel/img/img-6.jpg"></img>
-                <img src="https://himalayasingh.github.io/marvel/img/img-7.jpg"></img>
-                <img src="https://himalayasingh.github.io/marvel/img/img-8.jpg"></img>
-                <img src="https://himalayasingh.github.io/marvel/img/img-9.jpg"></img>
-                <img src="https://himalayasingh.github.io/marvel/img/img-10.jpg"></img>
-                <img src="https://himalayasingh.github.io/marvel/img/img-11.jpg"></img>
-                <img src="https://himalayasingh.github.io/marvel/img/img-12.jpg"></img>
-                <img src="https://himalayasingh.github.io/marvel/img/img-13.jpg"></img>
-                <img src="https://himalayasingh.github.io/marvel/img/img-14.jpg"></img>
-                <img src="https://himalayasingh.github.io/marvel/img/img-15.jpg"></img>
-                <img src="https://himalayasingh.github.io/marvel/img/img-16.jpg"></img>
-                <img src="https://himalayasingh.github.io/marvel/img/img-17.jpg"></img>
-                <img src="https://himalayasingh.github.io/marvel/img/img-18.jpg"></img>
-                <img src="https://himalayasingh.github.io/marvel/img/img-19.jpg"></img>
-                <img src="https://himalayasingh.github.io/marvel/img/img-20.jpg"></img>
+                <img src="https://himalayasingh.github.io/marvel/img/img-1.jpg" alt="back"></img>
+                <img src="https://himalayasingh.github.io/marvel/img/img-2.jpg" alt="back"></img>
+                <img src="https://himalayasingh.github.io/marvel/img/img-3.jpg" alt="back"></img>
+                <img src="https://himalayasingh.github.io/marvel/img/img-4.jpg" alt="back"></img>
+                <img src="https://himalayasingh.github.io/marvel/img/img-5.jpg" alt="back"></img>
+                <img src="https://himalayasingh.github.io/marvel/img/img-6.jpg" alt="back"></img>
+                <img src="https://himalayasingh.github.io/marvel/img/img-7.jpg" alt="back"></img>
+                <img src="https://himalayasingh.github.io/marvel/img/img-8.jpg" alt="back"></img>
+                <img src="https://himalayasingh.github.io/marvel/img/img-9.jpg" alt="back"></img>
+                <img src="https://himalayasingh.github.io/marvel/img/img-10.jpg" alt="back"></img>
+                <img src="https://himalayasingh.github.io/marvel/img/img-11.jpg" alt="back"></img>
+                <img src="https://himalayasingh.github.io/marvel/img/img-12.jpg" alt="back"></img>
+                <img src="https://himalayasingh.github.io/marvel/img/img-13.jpg" alt="back"></img>
+                <img src="https://himalayasingh.github.io/marvel/img/img-14.jpg" alt="back"></img>
+                <img src="https://himalayasingh.github.io/marvel/img/img-15.jpg" alt="back"></img>
+                <img src="https://himalayasingh.github.io/marvel/img/img-16.jpg" alt="back"></img>
+                <img src="https://himalayasingh.github.io/marvel/img/img-17.jpg" alt="back"></img>
+                <img src="https://himalayasingh.github.io/marvel/img/img-18.jpg" alt="back"></img>
+                <img src="https://himalayasingh.github.io/marvel/img/img-19.jpg" alt="back"></img>
+                <img src="https://himalayasingh.github.io/marvel/img/img-20.jpg" alt="back"></img>
             </div>
         </div>
     )

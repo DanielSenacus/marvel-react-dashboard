@@ -32,7 +32,7 @@ const Comics = ({ menuOpen, loading, comics }) => {
                         const { id, thumbnail, title, description, characters, creators } = comic
 
                         return (
-                            <div className="card flex-md-row p-3 mb-4 box-shadow h-md-250">
+                            <div key={id} className="card flex-md-row p-3 mb-4 box-shadow h-md-250">
 
                                 <div className="characterContainer">
                                     <img className="card-img-top img-thumbnail" src={thumbnail.path + "." + thumbnail.extension} alt={title} />

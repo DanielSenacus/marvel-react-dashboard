@@ -15,6 +15,9 @@ a {
   text-decoration: none;
 }
 
+body {
+}
+
 .sidebar {
   background-color: #063970;
   display: flex;
@@ -375,6 +378,8 @@ a {
 .user {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   span {
     width: 50px;
     border-radius: 50%;
