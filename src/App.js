@@ -20,7 +20,7 @@ import Intro from './components/Intro';
 import { FaSearch } from 'react-icons/fa'
 import User from './images/Spiederman'
 
-import './styles/App.scss';
+import './styles/App.css';
 
 const App = () => {
 
