@@ -39,41 +39,7 @@ const App = () => {
 
 
 
-  const fetchApi = async () => {
 
-    const pepa = new XMLHttpRequest();
-    const params = "characters";
-    pepa.open("GET", "../backend/main.php?public=" + params, true);
-
-    pepa.onload = function () {
-
-      if (pepa.status === 200) {
-        const result = JSON.parse(pepa.responseText);
-
-        if (result["data"].count === 0) {
-          console.log("papi que pasas");
-        } else {
-          const final = result["data"].results;
-          setCharacters(final);
-
-        }
-
-
-      }
-
-
-    }
-    pepa.send();
-
-
-
-    getCharacterAtrributes(1009165, "comics", setComics);
-    getCharacterAtrributes(1009165, "series", setSeries);
-    getCharacterAtrributes(1009165, "stories", setStories);
-    getCharacterAtrributes(1009165, "events", setEvents);
-
-
-  };
 
   const onSearch = (e) => {
 
@@ -142,7 +108,7 @@ const App = () => {
   const getCharacterAtrributes = (CharacterId, category, setFuncion) => {
     setLoading(true)
     const request = new XMLHttpRequest();
-    request.open("GET", '../backend/comics.php?character-id=' + CharacterId + "&" + "reference=" + category, true);
+    request.open("GET", '../backend/comics.php?character-id=' + CharacterId + "&reference=" + category, true);
 
     request.onerror = function () {
       setLoading(false);
@@ -178,6 +144,39 @@ const App = () => {
 
 
   React.useEffect(() => {
+
+    const fetchApi = async () => {
+
+      const pepa = new XMLHttpRequest();
+      const params = "characters";
+      pepa.open("GET", "../backend/main.php?public=" + params, true);
+
+      pepa.onload = function () {
+
+        if (pepa.status === 200) {
+          const result = JSON.parse(pepa.responseText);
+
+          if (result["data"].count === 0) {
+            console.log("papi que pasas");
+          } else {
+            const final = result["data"].results;
+            setCharacters(final);
+
+          }
+
+
+        }
+
+
+      }
+      pepa.send();
+
+      getCharacterAtrributes(1009165, "comics", setComics);
+      getCharacterAtrributes(1009165, "series", setSeries);
+      getCharacterAtrributes(1009165, "stories", setStories);
+      getCharacterAtrributes(1009165, "events", setEvents);
+
+    };
     fetchApi();
     setTimeout(() => {
       setIntro(false);
